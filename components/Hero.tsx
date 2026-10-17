@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-copy">
-        <Box sx={{ mb: 3 }}>
+        <Box sx={{ mb: 3 }} className="animate-load-badge">
           <Chip
             icon={
               <Box
@@ -42,17 +42,17 @@ export default function Hero() {
           />
         </Box>
 
-        <h1>
+        <h1 className="animate-load-title">
           More of the right people.<br />
           More reasons to <span className="hero-accent-underline">choose you.</span>
         </h1>
 
-        <p className="hero-sub">
+        <p className="hero-sub animate-load-sub">
           Digixito helps growing businesses turn search visibility and paid traffic into meaningful
           action with focused PPC, SEO, conversion-ready landing pages, and ongoing optimization.
         </p>
 
-        <Box sx={{ mt: 4, mb: 3 }}>
+        <Box sx={{ mt: 4, mb: 3 }} className="animate-load-cta">
           <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} sx={{ mb: 2 }}>
             <Button
               component="a"
@@ -96,14 +96,21 @@ export default function Hero() {
           </p>
         </Box>
 
-        <div className="hero-proofline">
+        <div className="hero-proofline animate-load-proof">
           <span className="proof-dot" />
           <span>A clear plan for the next stage of your digital growth.</span>
         </div>
+
+        <a href="#problem" className="scroll-down-hint" aria-label="Scroll down to explore">
+          <span className="scroll-down-mouse">
+            <span className="scroll-down-wheel" />
+          </span>
+          <span>Scroll to explore</span>
+        </a>
       </div>
 
       <div
-        className="hero-visual"
+        className="hero-visual animate-load-visual"
         aria-label="Abstract visual map showing paid search, SEO, and conversion flow"
         role="img"
       >

@@ -114,7 +114,7 @@ export default function Contact() {
 
   return (
     <section className="contact-section" id="contact">
-      <div className="contact-intro">
+      <div className="contact-intro reveal-on-scroll reveal-fade-left">
         <Box sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }}>
           <Chip
             label="06"
@@ -203,6 +203,7 @@ export default function Contact() {
 
       <Paper
         elevation={0}
+        className="reveal-on-scroll reveal-fade-right"
         sx={{
           p: { xs: 3, md: 5 },
           backgroundColor: "#ffffff",

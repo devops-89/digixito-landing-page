@@ -85,6 +85,7 @@ export default function Solutions() {
       }}
     >
       <Box
+        className="reveal-on-scroll"
         sx={{
           maxWidth: 1440,
           mx: 'auto',
@@ -164,12 +165,13 @@ export default function Solutions() {
           gap: 3,
         }}
       >
-        {coreSolutions.map((service) => {
+        {coreSolutions.map((service, index) => {
           const Icon = service.icon
           return (
             <Card
               key={service.id}
               elevation={0}
+              className={`reveal-on-scroll reveal-delay-${index + 1}`}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',

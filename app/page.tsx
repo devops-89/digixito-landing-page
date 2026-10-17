@@ -9,10 +9,12 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import AnimationController from '@/components/AnimationController'
 
 export default function Page() {
   return (
     <main className="site-shell">
+      <AnimationController />
       <ScrollProgress />
       <Header />
       <Hero />

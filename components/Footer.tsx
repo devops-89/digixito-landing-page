@@ -20,6 +20,7 @@ export default function Footer() {
       }}
     >
       <Box
+        className="reveal-on-scroll"
         sx={{
           maxWidth: 1440,
           mx: "auto",

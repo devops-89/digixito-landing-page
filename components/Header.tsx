@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <Box
       component="header"
-      className="site-header"
+      className="site-header animate-load-header"
       sx={{
         display: "flex",
         alignItems: "center",

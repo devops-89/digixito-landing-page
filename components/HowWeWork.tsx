@@ -27,7 +27,7 @@ const howWeWorkSteps = [
 export default function HowWeWork() {
   return (
     <section className="approach-section" id="how-we-work">
-      <div className="approach-visual">
+      <div className="approach-visual reveal-on-scroll reveal-scale">
         <div className="orbit-rotation" aria-hidden="true">
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
@@ -46,7 +46,7 @@ export default function HowWeWork() {
         </div>
       </div>
 
-      <div className="approach-copy">
+      <div className="approach-copy reveal-on-scroll reveal-delay-1">
         <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Chip
             label="04"
@@ -82,10 +82,11 @@ export default function HowWeWork() {
         </p>
 
         <Stack spacing={3} className="steps" sx={{ my: 4 }}>
-          {howWeWorkSteps.map(({ number, title, text }) => (
+          {howWeWorkSteps.map(({ number, title, text }, index) => (
             <Paper
               key={number}
               elevation={0}
+              className={`reveal-on-scroll reveal-delay-${index + 1}`}
               sx={{
                 display: 'flex',
                 gap: 2.5,
@@ -143,6 +144,7 @@ export default function HowWeWork() {
 
         <Paper
           elevation={0}
+          className="reveal-on-scroll reveal-delay-3"
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column', sm: 'row' },

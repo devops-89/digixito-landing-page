@@ -134,7 +134,7 @@ export default function ClientProof() {
 
   return (
     <section className="proof-section" id="proof">
-      <Box sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }}>
+      <Box sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }} className="reveal-on-scroll">
         <Chip
           label="05"
           size="small"
@@ -162,7 +162,7 @@ export default function ClientProof() {
         </Box>
       </Box>
 
-      <div className="proof-layout">
+      <div className="proof-layout reveal-on-scroll reveal-delay-1">
         <div>
           <h2>Real partners. Real platforms. Measurable impact.</h2>
           <p>
@@ -239,7 +239,7 @@ export default function ClientProof() {
         </Paper>
       </div>
 
-      <div className="proof-slider-header">
+      <div className="proof-slider-header reveal-on-scroll reveal-delay-1">
         <div className="slider-label-group">
           <Chip
             label="VERIFIED TESTIMONIALS"
@@ -304,7 +304,7 @@ export default function ClientProof() {
         </Stack>
       </div>
 
-      <div className="proof-swiper-container">
+      <div className="proof-swiper-container reveal-on-scroll reveal-delay-2">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={28}

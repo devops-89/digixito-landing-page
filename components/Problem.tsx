@@ -12,7 +12,7 @@ export default function Problem() {
   return (
     <section className="problem-section" id="problem">
       <div className="problem-container">
-        <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', gap: 1.5 }}>
+        <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', gap: 1.5 }} className="reveal-on-scroll">
           <Chip
             label="01"
             size="small"
@@ -41,10 +41,10 @@ export default function Problem() {
         </Box>
 
         <div className="problem-grid">
-          <div className="problem-left">
+          <div className="problem-left reveal-on-scroll reveal-delay-1">
             <h2>When digital channels work in silos, good opportunities get missed.</h2>
           </div>
-          <div className="problem-right">
+          <div className="problem-right reveal-on-scroll reveal-delay-2">
             <p className="problem-lead">
               You can invest in ads, publish content, and bring more visitors to your website, yet
               still wonder what is actually driving growth.

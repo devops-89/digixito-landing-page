@@ -85,6 +85,7 @@ export default function Capabilities() {
       }}
     >
       <Box
+        className="reveal-on-scroll"
         sx={{
           maxWidth: 1440,
           mx: 'auto',
@@ -164,12 +165,13 @@ export default function Capabilities() {
           gap: 3,
         }}
       >
-        {coreCapabilities.map((capability) => {
+        {coreCapabilities.map((capability, index) => {
           const Icon = capability.icon
           return (
             <Card
               key={capability.id}
               elevation={0}
+              className={`reveal-on-scroll reveal-delay-${index + 1}`}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',

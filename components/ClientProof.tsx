@@ -593,53 +593,6 @@ export default function ClientProof() {
                           {slide.industry}
                         </Typography>
                       </Box>
-
-                      {/* Right: Verified Badge & Timeline */}
-                      <Box
-                        sx={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "flex-end",
-                          gap: 1,
-                        }}
-                      >
-                        <Chip
-                          icon={
-                            <Box
-                              component="span"
-                              sx={{
-                                width: 6,
-                                height: 6,
-                                borderRadius: "50%",
-                                backgroundColor: "#10b981",
-                                ml: 1,
-                              }}
-                            />
-                          }
-                          label={slide.badge}
-                          size="small"
-                          sx={{
-                            backgroundColor: "#24262b",
-                            border: "1px solid #373a42",
-                            color: "#ffffff",
-                            fontFamily: "DM Mono, monospace",
-                            fontSize: "0.6875rem",
-                            fontWeight: 700,
-                          }}
-                        />
-                        <Chip
-                          label={slide.timeline}
-                          size="small"
-                          sx={{
-                            backgroundColor: "transparent",
-                            border: "1px solid #2e3036",
-                            color: "#94a3b8",
-                            fontFamily: "DM Mono, monospace",
-                            fontSize: "0.6875rem",
-                            fontWeight: 700,
-                          }}
-                        />
-                      </Box>
                     </Box>
 
                     {/* Main Testimonial Quote */}

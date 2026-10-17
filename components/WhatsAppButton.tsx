@@ -1,61 +1,62 @@
-'use client'
+"use client";
 
-import { useRef, useState } from 'react'
-import ReactWhatsapp from 'react-whatsapp'
-import Avatar from '@mui/material/Avatar'
-import Box from '@mui/material/Box'
-import Chip from '@mui/material/Chip'
-import Fab from '@mui/material/Fab'
-import IconButton from '@mui/material/IconButton'
-import Paper from '@mui/material/Paper'
-import Stack from '@mui/material/Stack'
-import TextField from '@mui/material/TextField'
-import Typography from '@mui/material/Typography'
-import { Send, Sparkles, X } from 'lucide-react'
+import { useRef, useState } from "react";
+import ReactWhatsapp from "react-whatsapp";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Chip from "@mui/material/Chip";
+import Fab from "@mui/material/Fab";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { Send, Sparkles, X } from "lucide-react";
 
 const defaultSuggestions = [
-  'PPC & Google Ads Audit',
-  'SEO & Organic Growth',
-  'Landing Page & CRO',
-  'AI Transformation & Scale',
-]
+  "PPC & Google Ads Audit",
+  "SEO & Organic Growth",
+  "Landing Page & CRO",
+  "AI Transformation & Scale",
+];
 
 export default function WhatsAppButton({
-  phoneNumber = '15550192834',
+  phoneNumber = "+91 8800291352",
 }: {
-  phoneNumber?: string
+  phoneNumber?: string;
 }) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [message, setMessage] = useState('')
-  const [sentMessages, setSentMessages] = useState<string[]>([])
-  const sendButtonRef = useRef<HTMLButtonElement>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [sentMessages, setSentMessages] = useState<string[]>([]);
+  const sendButtonRef = useRef<HTMLButtonElement>(null);
 
   const currentMessage =
-    message.trim() || "Hi Digixito team, I'd like to discuss digital growth solutions for my business."
+    message.trim() ||
+    "Hi Digixito team, I'd like to discuss digital growth solutions for my business.";
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      triggerSend()
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      triggerSend();
     }
-  }
+  };
 
   const triggerSend = () => {
     if (message.trim()) {
-      setSentMessages((prev) => [...prev, message.trim()])
+      setSentMessages((prev) => [...prev, message.trim()]);
     }
     if (sendButtonRef.current) {
-      sendButtonRef.current.click()
+      sendButtonRef.current.click();
     }
-    setMessage('')
-  }
+    setMessage("");
+  };
 
   const handleSuggestionClick = (suggestion: string) => {
-    setMessage(`Hi Digixito, I'd like help with: ${suggestion}`)
-  }
+    setMessage(`Hi Digixito, I'd like help with: ${suggestion}`);
+  };
 
   return (
-    <Box sx={{ position: 'fixed', bottom: 24, right: 24, zIndex: 1200 }}>
+    <Box sx={{ position: "fixed", bottom: 24, right: 24, zIndex: 1200 }}>
       {isOpen && (
         <Paper
           elevation={4}
@@ -64,60 +65,65 @@ export default function WhatsAppButton({
           sx={{
             width: { xs: 320, sm: 360 },
             maxHeight: 520,
-            display: 'flex',
-            flexDirection: 'column',
-            backgroundColor: '#ffffff',
-            border: '1px solid #dedad0',
-            borderRadius: '16px',
-            overflow: 'hidden',
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "#ffffff",
+            border: "1px solid #dedad0",
+            borderRadius: "16px",
+            overflow: "hidden",
             mb: 2,
-            boxShadow: '0 16px 48px rgba(0,0,0,0.12)',
-            animation: 'fadeIn 0.2s ease',
+            boxShadow: "0 16px 48px rgba(0,0,0,0.12)",
+            animation: "fadeIn 0.2s ease",
           }}
         >
           {/* Header */}
           <Box
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
               p: 2,
-              backgroundColor: '#111111',
-              color: '#ffffff',
+              backgroundColor: "#111111",
+              color: "#ffffff",
             }}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Box sx={{ position: 'relative' }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+              <Box sx={{ position: "relative" }}>
                 <Avatar
+                  src="/final_logo.svg"
+                  alt="Digixito"
                   sx={{
                     width: 36,
                     height: 36,
-                    backgroundColor: '#FFEF46',
-                    color: '#111111',
-                    fontSize: '0.8125rem',
-                    fontWeight: 800,
+                    backgroundColor: "#ffffff",
+                    p: 0.5,
+                    border: "1px solid rgba(0,0,0,0.08)",
                   }}
-                >
-                  DX
-                </Avatar>
+                />
                 <Box
                   sx={{
-                    position: 'absolute',
+                    position: "absolute",
                     bottom: 0,
                     right: 0,
                     width: 10,
                     height: 10,
-                    borderRadius: '50%',
-                    backgroundColor: '#10b981',
-                    border: '2px solid #111111',
+                    borderRadius: "50%",
+                    backgroundColor: "#10b981",
+                    border: "2px solid #111111",
                   }}
                 />
               </Box>
               <Box>
-                <Typography sx={{ fontWeight: 700, fontSize: '0.875rem', lineHeight: 1.2 }}>
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: "0.875rem",
+                    lineHeight: 1.2,
+                  }}
+                >
                   Digixito Assistant
                 </Typography>
-                <Typography sx={{ fontSize: '0.6875rem', color: '#9e9e9e' }}>
+                <Typography sx={{ fontSize: "0.6875rem", color: "#9e9e9e" }}>
                   Online • Replies quickly
                 </Typography>
               </Box>
@@ -126,7 +132,7 @@ export default function WhatsAppButton({
               size="small"
               onClick={() => setIsOpen(false)}
               aria-label="Close chat window"
-              sx={{ color: '#ffffff' }}
+              sx={{ color: "#ffffff" }}
             >
               <X size={18} />
             </IconButton>
@@ -137,24 +143,24 @@ export default function WhatsAppButton({
             sx={{
               p: 2.5,
               flexGrow: 1,
-              overflowY: 'auto',
-              backgroundColor: '#f8f6f0',
-              display: 'flex',
-              flexDirection: 'column',
+              overflowY: "auto",
+              backgroundColor: "#f8f6f0",
+              display: "flex",
+              flexDirection: "column",
               gap: 2,
             }}
           >
-            <Box sx={{ textAlign: 'center' }}>
+            <Box sx={{ textAlign: "center" }}>
               <Chip
                 label="TODAY"
                 size="small"
                 sx={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #dedad0',
-                  fontSize: '0.6875rem',
-                  fontFamily: 'DM Mono, monospace',
+                  backgroundColor: "#ffffff",
+                  border: "1px solid #dedad0",
+                  fontSize: "0.6875rem",
+                  fontFamily: "DM Mono, monospace",
                   fontWeight: 700,
-                  color: 'text.secondary',
+                  color: "text.secondary",
                   height: 20,
                 }}
               />
@@ -165,39 +171,52 @@ export default function WhatsAppButton({
               elevation={0}
               sx={{
                 p: 2,
-                backgroundColor: '#ffffff',
-                border: '1px solid #dedad0',
-                borderRadius: '12px 12px 12px 2px',
-                maxWidth: '90%',
+                backgroundColor: "#ffffff",
+                border: "1px solid #dedad0",
+                borderRadius: "12px 12px 12px 2px",
+                maxWidth: "90%",
               }}
             >
               <Box
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
+                  display: "flex",
+                  alignItems: "center",
                   gap: 0.75,
-                  fontSize: '0.75rem',
+                  fontSize: "0.75rem",
                   fontWeight: 700,
-                  color: '#111111',
+                  color: "#111111",
                   mb: 1,
                 }}
               >
                 <Sparkles size={12} /> Digixito Strategist
               </Box>
-              <Typography sx={{ fontSize: '0.8125rem', color: 'text.primary', mb: 1 }}>
+              <Typography
+                sx={{ fontSize: "0.8125rem", color: "text.primary", mb: 1 }}
+              >
                 Hi there! 👋 Welcome to Digixito.
               </Typography>
-              <Typography sx={{ fontSize: '0.8125rem', color: 'text.secondary' }}>
-                We help growing businesses turn search visibility and traffic into measurable revenue. Type your message below to connect on WhatsApp!
+              <Typography
+                sx={{ fontSize: "0.8125rem", color: "text.secondary" }}
+              >
+                We help growing businesses turn search visibility and traffic
+                into measurable revenue. Type your message below to connect on
+                WhatsApp!
               </Typography>
             </Paper>
 
             {/* Suggestions */}
             <Box>
-              <Typography sx={{ fontSize: '0.6875rem', fontWeight: 700, color: 'text.secondary', mb: 1 }}>
+              <Typography
+                sx={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 700,
+                  color: "text.secondary",
+                  mb: 1,
+                }}
+              >
                 Popular topics:
               </Typography>
-              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75 }}>
                 {defaultSuggestions.map((item) => (
                   <Chip
                     key={item}
@@ -206,14 +225,14 @@ export default function WhatsAppButton({
                     clickable
                     onClick={() => handleSuggestionClick(item)}
                     sx={{
-                      backgroundColor: '#ffffff',
-                      border: '1px solid #dedad0',
-                      fontSize: '0.75rem',
+                      backgroundColor: "#ffffff",
+                      border: "1px solid #dedad0",
+                      fontSize: "0.75rem",
                       fontWeight: 600,
-                      '&:hover': {
-                        backgroundColor: '#FFEF46',
-                        borderColor: '#111111',
-                        color: '#111111',
+                      "&:hover": {
+                        backgroundColor: "#FFEF46",
+                        borderColor: "#111111",
+                        color: "#111111",
                       },
                     }}
                   />
@@ -223,17 +242,17 @@ export default function WhatsAppButton({
 
             {/* Outgoing messages */}
             {sentMessages.map((msg, idx) => (
-              <Box key={idx} sx={{ alignSelf: 'flex-end', maxWidth: '85%' }}>
+              <Box key={idx} sx={{ alignSelf: "flex-end", maxWidth: "85%" }}>
                 <Paper
                   elevation={0}
                   sx={{
                     p: 1.75,
-                    backgroundColor: '#111111',
-                    color: '#ffffff',
-                    borderRadius: '12px 12px 2px 12px',
+                    backgroundColor: "#111111",
+                    color: "#ffffff",
+                    borderRadius: "12px 12px 2px 12px",
                   }}
                 >
-                  <Typography sx={{ fontSize: '0.8125rem' }}>{msg}</Typography>
+                  <Typography sx={{ fontSize: "0.8125rem" }}>{msg}</Typography>
                 </Paper>
               </Box>
             ))}
@@ -243,15 +262,15 @@ export default function WhatsAppButton({
           <Box
             component="form"
             onSubmit={(e) => {
-              e.preventDefault()
-              triggerSend()
+              e.preventDefault();
+              triggerSend();
             }}
             sx={{
-              display: 'flex',
-              alignItems: 'center',
+              display: "flex",
+              alignItems: "center",
               p: 1.5,
-              backgroundColor: '#ffffff',
-              borderTop: '1px solid #dedad0',
+              backgroundColor: "#ffffff",
+              borderTop: "1px solid #dedad0",
               gap: 1,
             }}
           >
@@ -263,8 +282,8 @@ export default function WhatsAppButton({
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
               sx={{
-                '& .MuiOutlinedInput-root': {
-                  fontSize: '0.8125rem',
+                "& .MuiOutlinedInput-root": {
+                  fontSize: "0.8125rem",
                 },
               }}
             />
@@ -272,10 +291,10 @@ export default function WhatsAppButton({
               type="button"
               onClick={triggerSend}
               sx={{
-                backgroundColor: '#FFEF46',
-                color: '#111111',
-                '&:hover': {
-                  backgroundColor: '#ffe91a',
+                backgroundColor: "#FFEF46",
+                color: "#111111",
+                "&:hover": {
+                  backgroundColor: "#ffe91a",
                 },
                 width: 38,
                 height: 38,
@@ -285,7 +304,7 @@ export default function WhatsAppButton({
               <Send size={16} />
             </IconButton>
 
-            <Box sx={{ display: 'none' }}>
+            <Box sx={{ display: "none" }}>
               <ReactWhatsapp
                 ref={sendButtonRef}
                 number={phoneNumber}
@@ -302,19 +321,19 @@ export default function WhatsAppButton({
       {/* Floating Action Button */}
       <Fab
         onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? 'Close WhatsApp chat' : 'Open WhatsApp chat'}
+        aria-label={isOpen ? "Close WhatsApp chat" : "Open WhatsApp chat"}
         aria-expanded={isOpen}
         sx={{
-          backgroundColor: '#25D366',
-          color: '#ffffff',
+          backgroundColor: "#25D366",
+          color: "#ffffff",
           width: 58,
           height: 58,
-          boxShadow: '0 8px 24px rgba(37, 211, 102, 0.4)',
-          transition: 'all 0.25s ease',
-          '&:hover': {
-            backgroundColor: '#1ebe57',
-            transform: 'scale(1.05)',
-            boxShadow: '0 10px 28px rgba(37, 211, 102, 0.5)',
+          boxShadow: "0 8px 24px rgba(37, 211, 102, 0.4)",
+          transition: "all 0.25s ease",
+          "&:hover": {
+            backgroundColor: "#1ebe57",
+            transform: "scale(1.05)",
+            boxShadow: "0 10px 28px rgba(37, 211, 102, 0.5)",
           },
         }}
       >
@@ -329,5 +348,5 @@ export default function WhatsAppButton({
         </svg>
       </Fab>
     </Box>
-  )
+  );
 }

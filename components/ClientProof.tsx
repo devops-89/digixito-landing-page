@@ -54,9 +54,10 @@ type ProofSlide = TestimonialSlide | ApproachSlide;
 const proofSlides: ProofSlide[] = [
   {
     id: "mytreks-testimonial",
-    brandName: "treks",
+    brandName: "MyTreks",
     brandColor: "#FF6B35",
     brandType: "treks",
+    logoUrl: "/testimonials/mytreks.png",
     industry: "Travel Tech & Mobile App",
     badge: "Verified Tech Partner",
     timeline: "Rapid Timeline Sprint",
@@ -80,6 +81,7 @@ const proofSlides: ProofSlide[] = [
     brandName: "hScore",
     brandColor: "#38BDF8",
     brandType: "hscore",
+    logoUrl: "/testimonials/hscore.svg",
     industry: "FinTech & Wealth Management",
     badge: "Verified US Partner",
     timeline: "6-Month Partnership",
@@ -583,63 +585,38 @@ export default function ClientProof() {
                     >
                       {/* Stylized Brand Logo */}
                       <Box>
-                        {slide.brandType === "treks" ? (
+                        <Box
+                          sx={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            py: 0.85,
+                            px: 1.75,
+                            borderRadius: "12px",
+                            backgroundColor: "#ffffff",
+                            border: "1px solid rgba(255, 255, 255, 0.15)",
+                            height: 48,
+                            minWidth: 100,
+                          }}
+                        >
                           <Box
+                            component="img"
+                            src={slide.logoUrl}
+                            alt={slide.brandName}
                             sx={{
-                              fontFamily:
-                                "system-ui, -apple-system, sans-serif",
-                              fontWeight: 900,
-                              fontSize: { xs: "2.25rem", md: "2.75rem" },
-                              letterSpacing: "-0.06em",
-                              color: "#FF6B35",
-                              lineHeight: 1,
-                              textTransform: "lowercase",
-                              filter:
-                                "drop-shadow(0 2px 8px rgba(255,107,53,0.3))",
+                              height:
+                                slide.brandType === "treks"
+                                  ? 32
+                                  : slide.brandType === "hscore"
+                                  ? 24
+                                  : 24,
+                              maxWidth: 130,
+                              width: "auto",
+                              objectFit: "contain",
+                              display: "block",
                             }}
-                          >
-                            treks
-                          </Box>
-                        ) : slide.brandType === "hscore" ? (
-                          <Box
-                            sx={{
-                              fontFamily: "Manrope, sans-serif",
-                              fontWeight: 800,
-                              fontSize: { xs: "2.25rem", md: "2.75rem" },
-                              letterSpacing: "-0.04em",
-                              color: "#38BDF8",
-                              lineHeight: 1,
-                              filter:
-                                "drop-shadow(0 2px 8px rgba(56,189,248,0.3))",
-                            }}
-                          >
-                            hScore
-                          </Box>
-                        ) : (
-                          <Box
-                            sx={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              py: 0.85,
-                              px: 1.5,
-                              borderRadius: "12px",
-                              backgroundColor: "#ffffff",
-                              border: "1px solid rgba(255, 255, 255, 0.2)",
-                            }}
-                          >
-                            <Box
-                              component="img"
-                              src={slide.logoUrl || "/testimonials/haute-baby-logo.png"}
-                              alt={slide.brandName}
-                              sx={{
-                                height: { xs: 32, md: 38 },
-                                width: "auto",
-                                objectFit: "contain",
-                                display: "block",
-                              }}
-                            />
-                          </Box>
-                        )}
+                          />
+                        </Box>
                         <Typography
                           sx={{
                             fontFamily: "DM Mono, monospace",
@@ -790,15 +767,45 @@ export default function ClientProof() {
         <div className="logo-strip">
           <div
             className="logo-box"
-            style={{ color: "#FF6B35", fontWeight: 900 }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "10px 22px",
+            }}
           >
-            TREKS
+            <Box
+              component="img"
+              src="/testimonials/mytreks.png"
+              alt="MyTreks"
+              sx={{
+                height: 28,
+                width: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </div>
           <div
             className="logo-box"
-            style={{ color: "#38BDF8", fontWeight: 900 }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "10px 22px",
+            }}
           >
-            HSCORE
+            <Box
+              component="img"
+              src="/testimonials/hscore.svg"
+              alt="hScore"
+              sx={{
+                height: 22,
+                width: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </div>
           <div
             className="logo-box"

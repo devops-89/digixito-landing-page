@@ -19,9 +19,9 @@ const coreCapabilities = [
     number: '01',
     title: 'AI Transformation',
     icon: Brain,
-    lead: 'Intelligent Automation & Predictive Pipelines',
+    lead: 'Automation & Predictive Models',
     description:
-      'Bespoke machine learning, predictive modeling, custom LLMs, and intelligent automation pipelines that eliminate operational friction and unlock actionable business intelligence.',
+      'Custom ML models, generative AI, and automation pipelines engineered to streamline operations and unlock high-impact business intelligence.',
     highlights: [
       'Machine Learning & Predictive Models',
       'Generative AI & Custom LLMs',
@@ -33,9 +33,9 @@ const coreCapabilities = [
     number: '02',
     title: 'Business Transformation',
     icon: Briefcase,
-    lead: 'Commercial, Creative & Operational Scale',
+    lead: 'Commercial & Creative Scale',
     description:
-      'We align commercial strategy, creative brand transformation, media discovery, and multi-channel commerce into a singular growth engine built to expand your market footprint.',
+      'Integrated commercial strategy, creative branding, and omnichannel media built to accelerate market expansion.',
     highlights: [
       'Commercial & Brand Strategy',
       '360° Creative Campaigns',
@@ -47,9 +47,9 @@ const coreCapabilities = [
     number: '03',
     title: 'Product Engineering',
     icon: Cpu,
-    lead: 'Resilient Cloud & Digital Platforms',
+    lead: 'Cloud & Digital Platforms',
     description:
-      'High-availability SaaS applications, web and mobile platforms, resilient cloud architectures, and seamless API integrations engineered for speed, security, and scale.',
+      'High-performance SaaS platforms, web applications, and resilient cloud architectures engineered for speed, security, and scale.',
     highlights: [
       'SaaS & Mobile Applications',
       'API Integrations & Systems',
@@ -61,9 +61,9 @@ const coreCapabilities = [
     number: '04',
     title: 'Design Intelligence',
     icon: Palette,
-    lead: 'Human-Centered UI/UX & Digital Experience',
+    lead: 'Conversion-First UI/UX Design',
     description:
-      'Modern UI/UX design, conversational interfaces, rapid prototyping, and empirical user research designed to elevate brand perception and increase conversion velocity.',
+      'Conversion-first UI/UX design, rapid prototyping, and empirical user research that elevate customer retention and brand equity.',
     highlights: [
       'UI/UX Product Architecture',
       'Conversational Interface Design',
@@ -147,8 +147,7 @@ export default function Capabilities() {
             lineHeight: 1.6,
           }}
         >
-          Deep technical and creative execution across artificial intelligence, full-stack product engineering,
-          commercial transformation, and design intelligence.
+          Deep technical and creative execution across AI, modern cloud platforms, and conversion design.
         </Typography>
       </Box>
 

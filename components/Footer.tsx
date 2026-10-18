@@ -67,7 +67,7 @@ export default function Footer() {
               maxWidth: 280,
             }}
           >
-            A clearer path from digital activity to business action.
+            Intelligent technology, transformative business scale.
           </Typography>
         </Box>
 
@@ -86,10 +86,10 @@ export default function Footer() {
           </Typography>
           <Stack spacing={1.5}>
             {[
-              "Paid Search & PPC",
-              "SEO & Discoverability",
-              "Landing Pages & CRO",
-              "Analytics & Review",
+              "AI Transformation",
+              "Business Transformation",
+              "Product Engineering",
+              "Design Intelligence",
             ].map((item) => (
               <Box
                 key={item}
@@ -120,19 +120,19 @@ export default function Footer() {
               mb: 2,
             }}
           >
-            CAPABILITIES
+            EXPERTISE
           </Typography>
           <Stack spacing={1.5}>
             {[
-              "AI Transformation",
-              "Business Transformation",
-              "Product Engineering",
-              "Design Intelligence",
+              "Custom LLMs & Machine Learning",
+              "High-Availability Cloud Architecture",
+              "Mobile & SaaS Platform Engineering",
+              "UI/UX & Design Systems",
             ].map((item) => (
               <Box
                 key={item}
                 component="a"
-                href="#capabilities"
+                href="#solutions"
                 sx={{
                   fontSize: "0.875rem",
                   color: "text.primary",
@@ -171,7 +171,7 @@ export default function Footer() {
             Start a conversation
           </Button>
           <Chip
-            label="US Market Digital Growth"
+            label="Enterprise Tech & Product Partner"
             size="small"
             sx={{
               backgroundColor: "#f8f6f0",
@@ -204,7 +204,6 @@ export default function Footer() {
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
           {[
             "Solutions",
-            "Capabilities",
             "How We Work",
             "Proof",
             "Contact",

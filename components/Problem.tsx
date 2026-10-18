@@ -1,11 +1,13 @@
+'use client'
+
 import Box from '@mui/material/Box'
 import Chip from '@mui/material/Chip'
-import Stack from '@mui/material/Stack'
 
 const problemPoints = [
-  'Disconnected campaigns & pages',
-  'Unclear conversion attribution',
-  'Guesswork over data-driven scale',
+  'Legacy Tech Debt & Fragile Systems',
+  'Fragmented AI & Data Silos',
+  'Slow Product Engineering Velocity',
+  'Disconnected Customer Experiences',
 ]
 
 export default function Problem() {
@@ -36,24 +38,20 @@ export default function Problem() {
               color: 'text.secondary',
             }}
           >
-            THE SILO PROBLEM
+            THE FRAGMENTATION PROBLEM
           </Box>
         </Box>
 
         <div className="problem-grid">
           <div className="problem-left reveal-on-scroll reveal-delay-1">
-            <h2>When digital channels work in silos, good opportunities get missed.</h2>
+            <h2>When technology and strategy operate in silos, growth stalls.</h2>
           </div>
           <div className="problem-right reveal-on-scroll reveal-delay-2">
             <p className="problem-lead">
-              You can invest in ads, publish content, and bring more visitors to your website, yet
-              still wonder what is actually driving growth.
+              Outdated platforms, disconnected digital tools, and fragmented tech stacks slow innovation and burn valuable engineering bandwidth.
             </p>
             <p className="problem-body">
-              When campaigns, landing pages, and reporting operate in separate silos, prospective
-              customers experience disjointed messages, budgets are wasted on vanity metrics, and it
-              becomes harder to know what move to make next. Digixito connects all four corners into
-              one clear, cohesive growth system.
+              Digixito unifies AI Transformation, Business Transformation, Product Engineering, and Design Intelligence into one cohesive partner model — helping you build scalable products, automate core operations, and accelerate market expansion.
             </p>
 
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mt: 3 }}>
@@ -61,15 +59,15 @@ export default function Problem() {
                 <Chip
                   key={point}
                   icon={
-                    <Box
-                      component="span"
-                      sx={{
+                    <span
+                      style={{
                         width: 6,
                         height: 6,
                         borderRadius: '50%',
                         backgroundColor: '#FFEF46',
                         border: '1px solid #111111',
-                        ml: 1,
+                        marginLeft: 6,
+                        display: 'inline-block',
                       }}
                     />
                   }

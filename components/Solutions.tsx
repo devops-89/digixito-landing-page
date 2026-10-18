@@ -1,74 +1,55 @@
+'use client'
+
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Chip from '@mui/material/Chip'
-import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import {
   ArrowUpRight,
-  BarChart3,
-  Search,
-  Sparkles,
-  Target,
+  Brain,
+  Briefcase,
+  Cpu,
+  Palette,
 } from 'lucide-react'
 
 const coreSolutions = [
   {
-    id: 'paid-search',
+    id: 'ai-transformation',
     number: '01',
-    title: 'Paid Search & PPC',
-    icon: Search,
-    lead: 'High-Intent Targeting & Revenue Scale',
+    title: 'AI Transformation',
+    icon: Brain,
     description:
-      'Reach buyers actively searching for what you offer. We shape paid campaigns around high-intent keywords, audience segmentation, and thoughtful budget management across Google Ads and search networks.',
-    highlights: [
-      'Intent-Matched Keyword Bidding',
-      'Search & Shopping Campaigns',
-      'ROI & Budget Efficiency',
-    ],
+      'Deploy custom LLMs, intelligent automations, and predictive data pipelines that eliminate operational friction and unlock scale.',
+    tags: ['Custom LLMs', 'AI Automation', 'Enterprise MLOps'],
   },
   {
-    id: 'seo-disc',
+    id: 'business-transformation',
     number: '02',
-    title: 'SEO & Discoverability',
-    icon: Sparkles,
-    lead: 'Organic Authority & Long-Term Search Visibility',
+    title: 'Business Transformation',
+    icon: Briefcase,
     description:
-      'Build a resilient foundation to capture organic demand. We focus on search intent architecture, technical health, on-page optimization, and authoritative content that drives sustainable customer acquisition.',
-    highlights: [
-      'Technical SEO & Site Architecture',
-      'Intent-Focused Content Strategy',
-      'Local & National Search Authority',
-    ],
+      'Modernize commercial systems, brand architecture, and multi-channel growth engines built to expand your market footprint.',
+    tags: ['Commercial Strategy', 'Brand Systems', 'Omnichannel Growth'],
   },
   {
-    id: 'cro-pages',
+    id: 'product-engineering',
     number: '03',
-    title: 'Landing Pages & CRO',
-    icon: Target,
-    lead: 'Conversion Velocity & Frictionless Action',
+    title: 'Product Engineering',
+    icon: Cpu,
     description:
-      'Give every campaign a focused destination. We engineer bespoke landing pages, refine message clarity, and eliminate friction with continuous A/B testing so visitors become paying customers.',
-    highlights: [
-      'High-Converting Page Architecture',
-      'Empirical A/B Experimentation',
-      'Checkout & Intake Optimization',
-    ],
+      'Engineer high-velocity SaaS platforms, mobile applications, and resilient cloud architectures built for security and enterprise scale.',
+    tags: ['Cloud & SaaS', 'iOS / Android', 'API Architecture'],
   },
   {
-    id: 'analytics-review',
+    id: 'design-intelligence',
     number: '04',
-    title: 'Analytics & Review',
-    icon: BarChart3,
-    lead: 'Closed-Loop Attribution & Actionable Data',
+    title: 'Design Intelligence',
+    icon: Palette,
     description:
-      'Understand how prospects move from first touch to conversion. We implement robust event tracking, server-side attribution, and transparent sprint reviews so every dollar spent has clear accountability.',
-    highlights: [
-      'Full-Funnel Attribution Modeling',
-      'Drop-Off & Conversion Analysis',
-      'Transparent Bi-Weekly Reviews',
-    ],
+      'Craft intuitive digital products, conversion-first user interfaces, and scalable design systems that elevate customer retention.',
+    tags: ['Product UI/UX', 'Design Systems', 'CRO & Research'],
   },
 ]
 
@@ -78,18 +59,19 @@ export default function Solutions() {
       component="section"
       id="solutions"
       sx={{
-        backgroundColor: 'var(--cream)',
+        backgroundColor: '#f8f6f0',
         py: { xs: 8, md: 12 },
         px: { xs: 3, md: 6, lg: 10 },
         borderTop: '1px solid #dedad0',
       }}
     >
+      {/* Section Header */}
       <Box
         className="reveal-on-scroll"
         sx={{
           maxWidth: 1440,
           mx: 'auto',
-          mb: 5,
+          mb: 6,
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
@@ -110,6 +92,7 @@ export default function Solutions() {
                 fontSize: '0.6875rem',
                 height: 22,
                 px: 0.5,
+                boxShadow: 'none',
               }}
             />
             <Box
@@ -128,15 +111,15 @@ export default function Solutions() {
           <Typography
             variant="h2"
             sx={{
-              fontSize: { xs: '2rem', md: '3rem' },
+              fontSize: { xs: '2rem', md: '2.75rem' },
               fontWeight: 800,
-              letterSpacing: '-0.05em',
-              lineHeight: 1.08,
+              letterSpacing: '-0.04em',
+              lineHeight: 1.12,
               color: 'text.primary',
-              maxWidth: 700,
+              maxWidth: 680,
             }}
           >
-            Four integrated solutions that turn visibility into action.
+            Four core solutions engineered for measurable impact.
           </Typography>
         </Box>
         <Typography
@@ -147,11 +130,11 @@ export default function Solutions() {
             lineHeight: 1.6,
           }}
         >
-          We connect search visibility, targeted landing pages, and ongoing measurement into one
-          clear, cohesive growth engine.
+          We unify artificial intelligence, strategic business growth, robust product engineering, and design intelligence into one cohesive partner model.
         </Typography>
       </Box>
 
+      {/* Solutions Cards Grid — Clean Minimalist Flat Design (Zero Shadow, Zero Gradient) */}
       <Box
         sx={{
           maxWidth: 1440,
@@ -159,32 +142,38 @@ export default function Solutions() {
           display: 'grid',
           gridTemplateColumns: {
             xs: '1fr',
-            md: 'repeat(2, 1fr)',
+            sm: 'repeat(2, 1fr)',
             lg: 'repeat(4, 1fr)',
           },
           gap: 3,
         }}
       >
-        {coreSolutions.map((service, index) => {
-          const Icon = service.icon
+        {coreSolutions.map((solution, index) => {
+          const Icon = solution.icon
           return (
             <Card
-              key={service.id}
+              key={solution.id}
               elevation={0}
               className={`reveal-on-scroll reveal-delay-${index + 1}`}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                p: { xs: 3, md: 4 },
+                p: { xs: 3, md: 3.5 },
+                borderRadius: '20px',
                 backgroundColor: '#ffffff',
                 border: '1px solid #dedad0',
-                borderRadius: '16px',
+                boxShadow: 'none',
                 transition: 'all 0.25s ease',
                 '&:hover': {
                   borderColor: '#111111',
                   transform: 'translateY(-4px)',
-                  boxShadow: '0 12px 32px rgba(17, 17, 17, 0.07)',
+                  boxShadow: 'none',
+                  '& .solution-icon-box': {
+                    backgroundColor: '#111111',
+                    color: '#FFEF46',
+                    borderColor: '#111111',
+                  },
                   '& .service-card-arrow': {
                     backgroundColor: '#FFEF46',
                     color: '#111111',
@@ -194,125 +183,111 @@ export default function Solutions() {
               }}
             >
               <CardContent sx={{ p: 0, '&:last-child': { pb: 0 } }}>
+                {/* Header: Clean Number and Icon */}
                 <Box
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    mb: 3,
+                    mb: 2.75,
                   }}
                 >
                   <Typography
                     sx={{
                       fontFamily: 'DM Mono, monospace',
-                      fontSize: '0.875rem',
-                      fontWeight: 700,
-                      color: 'text.secondary',
+                      fontSize: '0.8125rem',
+                      fontWeight: 800,
+                      color: '#111111',
+                      letterSpacing: '0.04em',
                     }}
                   >
-                    {service.number}
+                    {solution.number}
                   </Typography>
                   <Box
+                    className="solution-icon-box"
                     sx={{
                       width: 44,
                       height: 44,
-                      borderRadius: '10px',
+                      borderRadius: '12px',
                       backgroundColor: '#f8f6f0',
                       border: '1px solid #dedad0',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       color: '#111111',
+                      transition: 'all 0.25s ease',
                     }}
                   >
                     <Icon size={20} />
                   </Box>
                 </Box>
 
+                {/* Title */}
                 <Typography
                   variant="h3"
                   sx={{
-                    fontSize: '1.3125rem',
+                    fontSize: '1.25rem',
                     fontWeight: 800,
                     letterSpacing: '-0.03em',
-                    color: 'text.primary',
+                    color: '#111111',
                     lineHeight: 1.25,
-                    mb: 0.75,
+                    mb: 1.5,
                   }}
                 >
-                  {service.title}
+                  {solution.title}
                 </Typography>
 
+                {/* Description */}
+                <Typography
+                  sx={{
+                    fontSize: '0.84375rem',
+                    color: '#55514b',
+                    lineHeight: 1.6,
+                    mb: 2.75,
+                    fontWeight: 500,
+                  }}
+                >
+                  {solution.description}
+                </Typography>
+
+                {/* Clean Flat Capability Tags */}
                 <Box
                   sx={{
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    mb: 2,
-                  }}
-                >
-                  <Box
-                    component="span"
-                    sx={{
-                      width: 6,
-                      height: 6,
-                      borderRadius: '50%',
-                      backgroundColor: '#111111',
-                      flexShrink: 0,
-                    }}
-                  />
-                  <Typography
-                    sx={{
-                      fontSize: '0.8125rem',
-                      fontWeight: 700,
-                      color: 'text.primary',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
-                    {service.lead}
-                  </Typography>
-                </Box>
-
-                <Typography
-                  sx={{
-                    fontSize: '0.875rem',
-                    color: 'text.secondary',
-                    lineHeight: 1.6,
+                    flexWrap: 'wrap',
+                    gap: 0.85,
                     mb: 3,
                   }}
                 >
-                  {service.description}
-                </Typography>
-
-                <Stack spacing={1} sx={{ mb: 4 }}>
-                  {service.highlights.map((item) => (
+                  {solution.tags.map((tag) => (
                     <Box
-                      key={item}
+                      key={tag}
+                      component="span"
                       sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 1.25,
-                        fontSize: '0.78125rem',
-                        fontWeight: 600,
-                        color: 'text.primary',
+                        fontSize: '0.6875rem',
+                        fontFamily: 'DM Mono, monospace',
+                        fontWeight: 700,
+                        backgroundColor: '#f8f6f0',
+                        color: '#111111',
+                        border: '1px solid #dedad0',
+                        borderRadius: '8px',
+                        py: 0.45,
+                        px: 1.1,
+                        lineHeight: 1.3,
+                        letterSpacing: '-0.01em',
+                        transition: 'border-color 0.2s ease',
+                        '&:hover': {
+                          borderColor: '#111111',
+                        },
                       }}
                     >
-                      <Box
-                        component="span"
-                        sx={{
-                          width: 5,
-                          height: 5,
-                          borderRadius: '50%',
-                          backgroundColor: '#111111',
-                          flexShrink: 0,
-                        }}
-                      />
-                      {item}
+                      {tag}
                     </Box>
                   ))}
-                </Stack>
+                </Box>
               </CardContent>
 
+              {/* Clean Flat Action Button */}
               <Button
                 component="a"
                 href="#contact"
@@ -323,15 +298,15 @@ export default function Solutions() {
                     component="span"
                     className="service-card-arrow"
                     sx={{
-                      width: 24,
-                      height: 24,
+                      width: 26,
+                      height: 26,
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       backgroundColor: '#111111',
                       color: '#ffffff',
-                      transition: 'all 0.2s ease',
+                      transition: 'all 0.25s ease',
                       ml: 0.5,
                     }}
                   >
@@ -339,19 +314,25 @@ export default function Solutions() {
                   </Box>
                 }
                 sx={{
-                  py: 1.25,
+                  py: 1.15,
+                  px: 2,
                   fontSize: '0.8125rem',
-                  borderColor: '#dedad0',
-                  color: 'text.primary',
+                  fontWeight: 700,
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #dedad0',
+                  color: '#111111',
                   justifyContent: 'space-between',
-                  px: 2.5,
+                  borderRadius: '12px',
+                  boxShadow: 'none',
+                  transition: 'all 0.2s ease',
                   '&:hover': {
                     borderColor: '#111111',
-                    backgroundColor: 'rgba(17,17,17,0.03)',
+                    backgroundColor: '#f8f6f0',
+                    boxShadow: 'none',
                   },
                 }}
               >
-                Discuss this solution
+                Discuss solution
               </Button>
             </Card>
           )

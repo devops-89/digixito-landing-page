@@ -4,8 +4,8 @@ import MUIProvider from '@/components/MUIProvider'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Digixito — Digital growth for ambitious US businesses',
-  description: 'Digixito connects paid search, SEO, conversion-focused pages, and measurement to help US businesses turn online attention into meaningful action.',
+  title: 'Digixito — AI Transformation, Business Transformation, Product Engineering & Design Intelligence',
+  description: 'Digixito partners with ambitious businesses to engineer intelligent AI systems, scale digital products, modernize business operations, and craft high-impact user experiences.',
   generator: 'v0.app',
   icons: {
     icon: [

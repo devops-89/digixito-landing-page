@@ -15,15 +15,12 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const serviceHelpOptions = [
-  "Paid search / PPC",
-  "SEO",
-  "Landing pages / CRO",
-  "Analytics and optimization",
-  "Web Application Development",
-  "Mobile Application Development",
-  "E-commerce Development",
-  "AI Solutions",
-  "Custom Software Development",
+  "AI Transformation",
+  "Business Transformation",
+  "Product Engineering",
+  "Design Intelligence",
+  "Web & Mobile App Development",
+  "Cloud Architecture & APIs",
   "Not sure yet",
 ];
 
@@ -86,7 +83,7 @@ const initialValues: ContactFormValues = {
   email: "",
   company: "",
   website: "",
-  service: "Paid search / PPC",
+  service: "AI Transformation",
   goal: "",
   budget: "",
   source: "",
@@ -117,7 +114,7 @@ export default function Contact() {
       <div className="contact-intro reveal-on-scroll reveal-fade-left">
         <Box sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }}>
           <Chip
-            label="06"
+            label="05"
             size="small"
             sx={{
               backgroundColor: "#111111",
@@ -143,18 +140,16 @@ export default function Contact() {
           </Box>
         </Box>
 
-        <h2>Let’s make your next move a clear one.</h2>
+        <h2>Let’s build something extraordinary together.</h2>
         <p>
-          Tell us a little about your business and what you want to improve. We
-          will follow up to understand your goals and explore whether Digixito
-          is the right partner to help.
+          Tell us about your project or business goals. We will follow up to explore how our AI, engineering, and design teams can accelerate your roadmap.
         </p>
 
         <Stack spacing={2} sx={{ my: 4 }}>
           {[
-            "No obligation — just a practical growth conversation.",
-            "Direct feedback on your search intent and landing pages.",
-            "Strict data privacy: your information is used only to reply.",
+            "Direct conversation with senior engineers and architects.",
+            "Actionable roadmap for AI, product development, or business scale.",
+            "Strict data privacy — zero sales pressure.",
           ].map((perk) => (
             <Box
               key={perk}

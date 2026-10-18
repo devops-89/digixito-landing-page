@@ -31,7 +31,8 @@ interface TestimonialSlide extends BaseSlide {
   isApproach: false;
   brandName: string;
   brandColor: string;
-  brandType: "treks" | "hscore";
+  brandType: "treks" | "hscore" | "hautebaby";
+  logoUrl?: string;
   quote: string;
   specialNote: string;
   author: string;
@@ -97,6 +98,30 @@ const proofSlides: ProofSlide[] = [
     ],
     isApproach: false,
   },
+  {
+    id: "hautebaby-testimonial",
+    brandName: "Haute Baby",
+    brandColor: "#9333EA",
+    brandType: "hautebaby",
+    logoUrl: "/testimonials/haute-baby-logo.png",
+    industry: "Luxury Children's Apparel & Shopify",
+    badge: "Verified Retail Partner",
+    timeline: "Ongoing E-Commerce Growth",
+    quote:
+      "Digixito has been a valuable partner for Haute Baby. Their team has supported our digital marketing, built and continues to manage our Shopify website, and helped us improve our sales.",
+    specialNote:
+      "We appreciate their ongoing support and practical approach to growing our business.",
+    author: "Haute Baby Team",
+    role: "Brand Leadership",
+    company: "Haute Baby",
+    deliverables: [
+      "Shopify Website Build",
+      "Store Management",
+      "Digital Marketing",
+      "Sales Optimization",
+    ],
+    isApproach: false,
+  },
   // {
   //   id: 'transparent-approach',
   //   industry: 'Our Client Philosophy',
@@ -136,7 +161,7 @@ export default function ClientProof() {
     <section className="proof-section" id="proof">
       <Box sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }} className="reveal-on-scroll">
         <Chip
-          label="05"
+          label="04"
           size="small"
           sx={{
             backgroundColor: "#111111",
@@ -166,9 +191,7 @@ export default function ClientProof() {
         <div>
           <h2>Real partners. Real platforms. Measurable impact.</h2>
           <p>
-            The best proof comes directly from the founders and CTOs who build
-            and scale with Digixito. Here is what our partners say about our
-            engineering speed, quality, and support.
+            Direct feedback from founders and CTOs who build, launch, and scale with Digixito.
           </p>
         </div>
 
@@ -340,7 +363,7 @@ export default function ClientProof() {
           className="proof-swiper"
         >
           {proofSlides.map((slide) => (
-            <SwiperSlide key={slide.id} className="proof-slide">
+            <SwiperSlide key={slide.id} className="proof-slide" style={{ height: "auto", display: "flex" }}>
               {slide.isApproach ? (
                 /* Approach Philosophy Card */
                 <Card
@@ -351,6 +374,8 @@ export default function ClientProof() {
                     border: "1px solid #dedad0",
                     borderRadius: "20px",
                     height: "100%",
+                    width: "100%",
+                    flex: "1 1 auto",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
@@ -519,6 +544,8 @@ export default function ClientProof() {
                     border: "1px solid #2e3036",
                     borderRadius: "24px",
                     height: "100%",
+                    width: "100%",
+                    flex: "1 1 auto",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
@@ -526,6 +553,7 @@ export default function ClientProof() {
                     overflow: "hidden",
                     boxShadow: "0 16px 48px rgba(0,0,0,0.22)",
                     transition: "all 0.3s ease",
+                    boxSizing: "border-box",
                     "&:hover": {
                       borderColor: slide.brandColor,
                       transform: "translateY(-4px)",
@@ -534,7 +562,14 @@ export default function ClientProof() {
                   }}
                 >
                   <CardContent
-                    sx={{ p: 0, "&:last-child": { pb: 0 }, zIndex: 1 }}
+                    sx={{
+                      p: 0,
+                      "&:last-child": { pb: 0 },
+                      zIndex: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: "1 1 auto",
+                    }}
                   >
                     {/* Top Row: Brand Logo & Executive Polaroid Photo */}
                     <Box
@@ -543,6 +578,7 @@ export default function ClientProof() {
                         alignItems: "flex-start",
                         justifyContent: "space-between",
                         mb: 3.5,
+                        minHeight: { xs: "auto", sm: 84 },
                       }}
                     >
                       {/* Stylized Brand Logo */}
@@ -564,7 +600,7 @@ export default function ClientProof() {
                           >
                             treks
                           </Box>
-                        ) : (
+                        ) : slide.brandType === "hscore" ? (
                           <Box
                             sx={{
                               fontFamily: "Manrope, sans-serif",
@@ -578,6 +614,30 @@ export default function ClientProof() {
                             }}
                           >
                             hScore
+                          </Box>
+                        ) : (
+                          <Box
+                            sx={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              py: 0.85,
+                              px: 1.5,
+                              borderRadius: "12px",
+                              backgroundColor: "#ffffff",
+                              border: "1px solid rgba(255, 255, 255, 0.2)",
+                            }}
+                          >
+                            <Box
+                              component="img"
+                              src={slide.logoUrl || "/testimonials/haute-baby-logo.png"}
+                              alt={slide.brandName}
+                              sx={{
+                                height: { xs: 32, md: 38 },
+                                width: "auto",
+                                objectFit: "contain",
+                                display: "block",
+                              }}
+                            />
                           </Box>
                         )}
                         <Typography
@@ -604,6 +664,7 @@ export default function ClientProof() {
                         fontWeight: 400,
                         letterSpacing: "-0.01em",
                         mb: 2.5,
+                        flexGrow: 1,
                       }}
                     >
                       {slide.quote}
@@ -626,7 +687,7 @@ export default function ClientProof() {
 
                     {/* Key Deliverable Tags */}
                     <Box
-                      sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 4 }}
+                      sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 4, mt: "auto" }}
                     >
                       {slide.deliverables.map((item) => (
                         <Chip
@@ -655,6 +716,7 @@ export default function ClientProof() {
                       alignItems: "flex-end",
                       justifyContent: "space-between",
                       zIndex: 1,
+                      mt: "auto",
                     }}
                   >
                     <Box>
@@ -737,6 +799,27 @@ export default function ClientProof() {
             style={{ color: "#38BDF8", fontWeight: 900 }}
           >
             HSCORE
+          </div>
+          <div
+            className="logo-box"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "10px 22px",
+            }}
+          >
+            <Box
+              component="img"
+              src="/testimonials/haute-baby-logo.png"
+              alt="Haute Baby"
+              sx={{
+                height: 24,
+                width: "auto",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
           </div>
         </div>
       </div>

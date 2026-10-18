@@ -1,8 +1,7 @@
 import Header from '@/components/Header'
-import Hero from '@/components/Hero'
+import HeroSection3 from '@/components/HeroSection3'
 import Problem from '@/components/Problem'
 import Solutions from '@/components/Solutions'
-import Capabilities from '@/components/Capabilities'
 import HowWeWork from '@/components/HowWeWork'
 import ClientProof from '@/components/ClientProof'
 import Contact from '@/components/Contact'
@@ -13,19 +12,20 @@ import AnimationController from '@/components/AnimationController'
 
 export default function Page() {
   return (
-    <main className="site-shell">
+    <>
       <AnimationController />
       <ScrollProgress />
       <Header />
-      <Hero />
-      <Problem />
-      <Solutions />
-      <Capabilities />
-      <HowWeWork />
-      <ClientProof />
-      <Contact />
-      <Footer />
-      <WhatsAppButton />
-    </main>
+      <main className="site-shell">
+        <HeroSection3 />
+        <Problem />
+        <Solutions />
+        <HowWeWork />
+        <ClientProof />
+        <Contact />
+        <Footer />
+        <WhatsAppButton />
+      </main>
+    </>
   )
 }

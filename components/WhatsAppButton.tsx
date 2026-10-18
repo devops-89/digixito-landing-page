@@ -15,10 +15,10 @@ import Typography from "@mui/material/Typography";
 import { ArrowUp, Send, Sparkles, X } from "lucide-react";
 
 const defaultSuggestions = [
-  "PPC & Google Ads Audit",
-  "SEO & Organic Growth",
-  "Landing Page & CRO",
-  "AI Transformation & Scale",
+  "AI Transformation",
+  "Business Transformation",
+  "Product Engineering",
+  "Design Intelligence",
 ];
 
 export default function WhatsAppButton({

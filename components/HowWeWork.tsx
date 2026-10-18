@@ -4,23 +4,23 @@ import Chip from '@mui/material/Chip'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { ArrowRight, Target } from 'lucide-react'
+import { ArrowRight, Layers } from 'lucide-react'
 
 const howWeWorkSteps = [
   {
     number: '01',
-    title: 'Start with your audience, offer, and business goal.',
-    text: 'We identify your best prospective buyers, uncover what makes your offer compelling, and define clear business metrics instead of vanity traffic numbers.',
+    title: 'Strategy & Technical Discovery',
+    text: 'We align on your commercial objectives, technical requirements, and target users to chart an actionable engineering and design roadmap.',
   },
   {
     number: '02',
-    title: 'Build or refine the campaign and page experience around that goal.',
-    text: 'We connect search queries, high-converting ad copy, and targeted landing page structures into a frictionless conversion path.',
+    title: 'Agile Prototyping & Engineering Sprints',
+    text: 'We rapidly prototype human-centered UI/UX, build resilient production-grade software, and integrate intelligent AI capabilities in weekly sprint cycles.',
   },
   {
     number: '03',
-    title: 'Measure meaningful actions, review the results, and make focused improvements.',
-    text: 'We analyze real customer drop-off points, test message variations, and systematically optimize every stage of the funnel.',
+    title: 'Continuous Evolution & Measurable Scale',
+    text: 'We monitor live production performance, eliminate bottlenecks, and systematically evolve your digital platforms for long-term enterprise scale.',
   },
 ]
 
@@ -31,17 +31,17 @@ export default function HowWeWork() {
         <div className="orbit-rotation" aria-hidden="true">
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
-          <span className="orbit-tag tag-search">AUDIENCE</span>
-          <span className="orbit-tag tag-page">OFFER</span>
-          <span className="orbit-tag tag-proof">CAMPAIGN</span>
-          <span className="orbit-tag tag-data">METRICS</span>
+          <span className="orbit-tag tag-search">AI</span>
+          <span className="orbit-tag tag-page">ENGINEERING</span>
+          <span className="orbit-tag tag-proof">DESIGN</span>
+          <span className="orbit-tag tag-data">SCALE</span>
         </div>
         <div className="orbit-core">
-          <Target />
+          <Layers size={24} />
           <span>
-            PRACTICAL
+            PRODUCT
             <br />
-            GROWTH
+            EXCELLENCE
           </span>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function HowWeWork() {
       <div className="approach-copy reveal-on-scroll reveal-delay-1">
         <Box sx={{ mb: 2, display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Chip
-            label="04"
+            label="03"
             size="small"
             sx={{
               backgroundColor: '#111111',
@@ -77,8 +77,7 @@ export default function HowWeWork() {
 
         <h2>A disciplined process built around your goals.</h2>
         <p className="lead">
-          We don’t believe in disconnected marketing tactics. Every campaign and page change is
-          measured against actual business progress.
+          Transparent delivery, senior engineering talent, and rapid execution. We turn ambitious digital vision into battle-tested software.
         </p>
 
         <Stack spacing={3} className="steps" sx={{ my: 4 }}>
@@ -160,10 +159,10 @@ export default function HowWeWork() {
         >
           <Box>
             <Typography sx={{ fontWeight: 800, fontSize: '0.9375rem', color: 'text.primary', mb: 0.5 }}>
-              Find your next growth opportunity
+              Ready to build your next platform or AI capability?
             </Typography>
             <Typography sx={{ fontSize: '0.8125rem', color: 'text.secondary' }}>
-              Share what you are working toward. We will help you identify a useful place to start.
+              Share your project roadmap with us. We will identify clear, actionable technical milestones.
             </Typography>
           </Box>
           <Button

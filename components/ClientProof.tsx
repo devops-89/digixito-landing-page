@@ -110,9 +110,9 @@ const proofSlides: ProofSlide[] = [
     badge: "Verified Retail Partner",
     timeline: "Ongoing E-Commerce Growth",
     quote:
-      "Digixito has been a valuable partner for Haute Baby. Their team has supported our digital marketing, built and continues to manage our Shopify website, and helped us improve our sales.",
+      "Working with Digixito has been a positive experience for Haute Baby. Their team has supported our digital marketing efforts and helped us strengthen our online presence. They also built our Shopify website and continue to manage it, helping keep the site updated and running smoothly as our business grows.",
     specialNote:
-      "We appreciate their ongoing support and practical approach to growing our business.",
+      "Beyond the website, Digixito has worked with us to improve our sales through practical ideas and ongoing support. We value their responsiveness, collaborative approach, and commitment to understanding our business needs. Having a team we can rely on for both digital marketing and website support has made Digixito a valuable partner in Haute Baby’s growth.",
     author: "Haute Baby Team",
     role: "Brand Leadership",
     company: "Haute Baby",
@@ -124,34 +124,6 @@ const proofSlides: ProofSlide[] = [
     ],
     isApproach: false,
   },
-  // {
-  //   id: 'transparent-approach',
-  //   industry: 'Our Client Philosophy',
-  //   badge: 'The Digixito Standard',
-  //   timeline: 'Continuous Oversight',
-  //   title: 'Documenting the goal, the execution, and the learning',
-  //   description:
-  //     'When partners prefer to keep private financials confidential, we demonstrate the approach: the baseline audit, weekly iterations, and tactical learnings unlocked.',
-  //   steps: [
-  //     {
-  //       num: '01',
-  //       title: 'Baseline Attribution Audit',
-  //       text: 'Full funnel tracking audit before allocating live engineering or media budget.',
-  //     },
-  //     {
-  //       num: '02',
-  //       title: 'Transparent Weekly Logs',
-  //       text: 'Weekly experimentation reports with direct strategist and developer access.',
-  //     },
-  //     {
-  //       num: '03',
-  //       title: 'Substantiated Business ROI',
-  //       text: 'Focusing exclusively on qualified pipeline and production-grade delivery.',
-  //     },
-  //   ],
-  //   note: 'Client case data and verified outcomes shared with formal partner permission.',
-  //   isApproach: true,
-  // },
 ];
 
 export default function ClientProof() {
@@ -161,7 +133,10 @@ export default function ClientProof() {
 
   return (
     <section className="proof-section" id="proof">
-      <Box sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }} className="reveal-on-scroll">
+      <Box
+        sx={{ mb: 2, display: "flex", alignItems: "center", gap: 1.5 }}
+        className="reveal-on-scroll"
+      >
         <Chip
           label="04"
           size="small"
@@ -193,7 +168,8 @@ export default function ClientProof() {
         <div>
           <h2>Real partners. Real platforms. Measurable impact.</h2>
           <p>
-            Direct feedback from founders and CTOs who build, launch, and scale with Digixito.
+            Direct feedback from founders and CTOs who build, launch, and scale
+            with Digixito.
           </p>
         </div>
 
@@ -365,7 +341,11 @@ export default function ClientProof() {
           className="proof-swiper"
         >
           {proofSlides.map((slide) => (
-            <SwiperSlide key={slide.id} className="proof-slide" style={{ height: "auto", display: "flex" }}>
+            <SwiperSlide
+              key={slide.id}
+              className="proof-slide"
+              style={{ height: "auto", display: "flex" }}
+            >
               {slide.isApproach ? (
                 /* Approach Philosophy Card */
                 <Card
@@ -589,14 +569,8 @@ export default function ClientProof() {
                           sx={{
                             display: "inline-flex",
                             alignItems: "center",
-                            justifyContent: "center",
-                            py: 0.85,
-                            px: 1.75,
-                            borderRadius: "12px",
-                            backgroundColor: "#ffffff",
-                            border: "1px solid rgba(255, 255, 255, 0.15)",
-                            height: 48,
-                            minWidth: 100,
+                            justifyContent: "flex-start",
+                            height: 44,
                           }}
                         >
                           <Box
@@ -606,11 +580,11 @@ export default function ClientProof() {
                             sx={{
                               height:
                                 slide.brandType === "treks"
-                                  ? 32
+                                  ? 34
                                   : slide.brandType === "hscore"
-                                  ? 24
-                                  : 24,
-                              maxWidth: 130,
+                                    ? 26
+                                    : 28,
+                              maxWidth: 160,
                               width: "auto",
                               objectFit: "contain",
                               display: "block",
@@ -664,7 +638,13 @@ export default function ClientProof() {
 
                     {/* Key Deliverable Tags */}
                     <Box
-                      sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 4, mt: "auto" }}
+                      sx={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: 1,
+                        mb: 4,
+                        mt: "auto",
+                      }}
                     >
                       {slide.deliverables.map((item) => (
                         <Chip

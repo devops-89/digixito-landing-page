@@ -5,7 +5,6 @@ import Solutions from "@/components/Solutions";
 import HowWeWork from "@/components/HowWeWork";
 import ClientProof from "@/components/ClientProof";
 import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import AnimationController from "@/components/AnimationController";
@@ -25,7 +24,6 @@ export default function Page() {
         <HowWeWork />
         <ClientProof />
         <Contact />
-        <Footer />
         <WhatsAppButton />
       </main>
     </>

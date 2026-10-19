@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import { ArrowRight, Check } from "lucide-react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import TrustMetricsCards from "./TrustMetricsCards";
 
 const serviceHelpOptions = [
   "AI Transformation",
@@ -93,14 +94,28 @@ const initialValues: ContactFormValues = {
 export default function Contact() {
   const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const formik = useFormik<ContactFormValues>({
     initialValues,
     validationSchema: contactValidationSchema,
     onSubmit: async (values, { setSubmitting, resetForm }) => {
+      setSubmitError(null);
       try {
-        // Simulate network request for form submission
-        await new Promise((resolve) => setTimeout(resolve, 800));
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Failed to submit inquiry");
+        }
+
         setSubmitted(true);
         const params = new URLSearchParams();
         if (values.firstName) params.set("name", values.firstName);
@@ -108,8 +123,11 @@ export default function Contact() {
         if (values.company) params.set("company", values.company);
         resetForm();
         router.push(`/thank-you?${params.toString()}`);
-      } catch (error) {
+      } catch (error: any) {
         console.error("Failed to submit inquiry:", error);
+        setSubmitError(
+          error?.message || "Failed to submit. Please try again or email us directly."
+        );
       } finally {
         setSubmitting(false);
       }
@@ -205,17 +223,31 @@ export default function Contact() {
         </Box> */}
       </div>
 
-      <Paper
-        elevation={0}
-        className="reveal-on-scroll reveal-fade-right"
-        sx={{
-          p: { xs: 3, md: 5 },
-          backgroundColor: "#ffffff",
-          border: "1px solid #dedad0",
-          borderRadius: "20px",
-          boxShadow: "0 8px 30px rgba(0,0,0,0.04)",
-        }}
-      >
+      {/* Form Column Wrapper */}
+      <Box sx={{ width: "100%" }}>
+        {/* Trust Metrics Cards: Placed before the form on mobile devices */}
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            mb: 3.5,
+            width: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <TrustMetricsCards />
+        </Box>
+
+        <Paper
+          elevation={0}
+          className="reveal-on-scroll reveal-fade-right"
+          sx={{
+            p: { xs: 3, md: 5 },
+            backgroundColor: "#ffffff",
+            border: "1px solid #dedad0",
+            borderRadius: "20px",
+            boxShadow: "0 8px 30px rgba(0,0,0,0.04)",
+          }}
+        >
         {submitted ? (
           <Box sx={{ textAlign: "center", py: 4 }}>
             <Box
@@ -470,6 +502,24 @@ export default function Contact() {
                 />
               </Grid>
 
+              {submitError && (
+                <Grid size={12}>
+                  <Box
+                    sx={{
+                      p: 1.5,
+                      borderRadius: "10px",
+                      backgroundColor: "#fee2e2",
+                      border: "1px solid #fca5a5",
+                      color: "#991b1b",
+                      fontSize: "0.8125rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {submitError}
+                  </Box>
+                </Grid>
+              )}
+
               <Grid size={12}>
                 <Box sx={{ mt: 1 }}>
                   <Button
@@ -535,6 +585,7 @@ export default function Contact() {
           </Box>
         )}
       </Paper>
+      </Box>
     </section>
   );
 }

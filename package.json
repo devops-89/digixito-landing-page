@@ -25,6 +25,7 @@
     "react": "^19",
     "react-dom": "^19",
     "react-whatsapp": "^0.3.0",
+    "resend": "^6.34.1",
     "shadcn": "^4.11.0",
     "swiper": "^14.3.0",
     "tailwind-merge": "^3.3.1",

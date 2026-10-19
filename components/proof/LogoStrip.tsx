@@ -65,11 +65,12 @@ export function LogoStrip({
                   alt={partner.name}
                   sx={{
                     height: {
-                      xs: Math.max(18, partner.height - 4),
+                      xs: Math.round(partner.height * 1.08),
+                      sm: partner.height,
                       md: partner.height,
                     },
                     width: "auto",
-                    maxWidth: 180,
+                    maxWidth: { xs: 240, sm: 260, md: 300 },
                     objectFit: "contain",
                     display: "block",
                   }}

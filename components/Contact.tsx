@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
@@ -90,6 +91,7 @@ const initialValues: ContactFormValues = {
 };
 
 export default function Contact() {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
 
   const formik = useFormik<ContactFormValues>({
@@ -100,7 +102,12 @@ export default function Contact() {
         // Simulate network request for form submission
         await new Promise((resolve) => setTimeout(resolve, 800));
         setSubmitted(true);
+        const params = new URLSearchParams();
+        if (values.firstName) params.set("name", values.firstName);
+        if (values.service) params.set("service", values.service);
+        if (values.company) params.set("company", values.company);
         resetForm();
+        router.push(`/thank-you?${params.toString()}`);
       } catch (error) {
         console.error("Failed to submit inquiry:", error);
       } finally {
@@ -142,7 +149,9 @@ export default function Contact() {
 
         <h2>Let’s build something extraordinary together.</h2>
         <p>
-          Tell us about your project or business goals. We will follow up to explore how our AI, engineering, and design teams can accelerate your roadmap.
+          Tell us about your project or business goals. We will follow up to
+          explore how our AI, engineering, and design teams can accelerate your
+          roadmap.
         </p>
 
         <Stack spacing={2} sx={{ my: 4 }}>
@@ -174,7 +183,7 @@ export default function Contact() {
           ))}
         </Stack>
 
-        <Box sx={{ pt: 2, borderTop: "1px solid #dedad0" }}>
+        {/* <Box sx={{ pt: 2, borderTop: "1px solid #dedad0" }}>
           <Typography
             sx={{ fontSize: "0.8125rem", color: "text.secondary", mb: 0.5 }}
           >
@@ -193,7 +202,7 @@ export default function Contact() {
           >
             info@digixito.com
           </Box>
-        </Box>
+        </Box> */}
       </div>
 
       <Paper

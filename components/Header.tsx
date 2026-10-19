@@ -26,7 +26,8 @@ export default function Header() {
         backdropFilter: "blur(18px) saturate(180%)",
         WebkitBackdropFilter: "blur(18px) saturate(180%)",
         borderBottom: "1px solid rgba(17, 17, 17, 0.08)",
-        boxShadow: "0 4px 24px -2px rgba(17, 17, 17, 0.04), 0 2px 6px -1px rgba(17, 17, 17, 0.02)",
+        boxShadow:
+          "0 4px 24px -2px rgba(17, 17, 17, 0.04), 0 2px 6px -1px rgba(17, 17, 17, 0.02)",
         transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
     >
@@ -207,7 +208,14 @@ export default function Header() {
           },
         }}
       >
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", mb: 4 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 4,
+          }}
+        >
           <Box
             component="img"
             src="/final_logo.svg"

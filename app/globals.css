@@ -3580,12 +3580,12 @@
 .hero-section-2 {
   position: relative;
   width: 100%;
-  min-height: 94vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: clamp(70px, 10vh, 100px) 24px 70px;
+  padding: clamp(50px, 8vh, 80px) 0;
   background-color: #faf6eb;
   color: #111111;
 }
@@ -3594,12 +3594,11 @@
 .hero2-container {
   position: relative;
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.05fr 1.15fr 0.95fr;
+  grid-template-columns: 1.15fr 1fr 0.95fr;
   align-items: center;
-  gap: clamp(24px, 3.5vw, 48px);
+  gap: clamp(24px, 3.5vw, 44px);
   z-index: 3;
 }
 
@@ -3609,6 +3608,26 @@
   z-index: 5;
 }
 
+/* Text Accent Highlight */
+.hero2-text-highlight {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.hero2-text-highlight::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 4px;
+  height: 38%;
+  background: #ffef46;
+  z-index: -1;
+  border-radius: 4px;
+}
+
 /* Center Character Column */
 .hero2-center {
   position: relative;
@@ -3616,21 +3635,23 @@
   align-items: center;
   justify-content: center;
   min-height: 520px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Giant Backdrop Text Centered Behind Character */
 .hero2-backdrop-text {
   position: absolute;
-  top: 8%;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Manrope', -apple-system, sans-serif;
-  font-size: clamp(2.5rem, 5.2vw, 4.6rem);
-  font-weight: 900;
-  letter-spacing: 0.05em;
+  font-size: clamp(2.6rem, 5.2vw, 4.5rem);
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
   text-transform: uppercase;
-  color: #ffffff;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(17, 17, 17, 0.14);
   white-space: nowrap;
   pointer-events: none;
   z-index: 1;
@@ -3788,7 +3809,7 @@
 .hero2-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
   gap: 16px;
 }

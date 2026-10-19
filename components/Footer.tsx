@@ -5,7 +5,8 @@ import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { ArrowUpRight } from "lucide-react";
-
+import logo from "@/public/final_logo.svg";
+import Image from "next/image";
 export default function Footer() {
   return (
     <Box
@@ -48,12 +49,12 @@ export default function Footer() {
             }}
           >
             <Box
-              component="img"
-              src="/final_logo.svg"
+              component={Image}
+              src={logo}
               alt="Digixito"
               sx={{
-                width: { xs: 70, md: 84 },
-                height: { xs: 70, md: 84 },
+                width: { xs: 50, md: 60 },
+                height: { xs: 50, md: 60 },
                 objectFit: "contain",
                 display: "block",
               }}

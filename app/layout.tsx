@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from "next";
 import MUIProvider from "@/components/MUIProvider";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
+
 export const metadata: Metadata = {
   title:
     "Digixito — AI Transformation, Business Transformation, Product Engineering & Design Intelligence",
@@ -57,6 +59,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+
+        {/* Statcounter code for campaign https://us.digixito.com/ */}
+        <Script id="statcounter-config" strategy="afterInteractive">
+          {`
+            var sc_project=13361723; 
+            var sc_invisible=1; 
+            var sc_security="3685d0a0"; 
+            window.sc_project = 13361723;
+            window.sc_invisible = 1;
+            window.sc_security = "3685d0a0";
+          `}
+        </Script>
+        <Script
+          id="statcounter-script"
+          src="https://www.statcounter.com/counter/counter.js"
+          strategy="afterInteractive"
+        />
+        <noscript>
+          <div className="statcounter">
+            <a
+              title="Web Analytics Made Easy - Statcounter"
+              href="https://statcounter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="statcounter"
+                src="https://c.statcounter.com/13361723/0/3685d0a0/1/"
+                alt="Web Analytics Made Easy - Statcounter"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </a>
+          </div>
+        </noscript>
+        {/* End of Statcounter Code */}
+
         <MUIProvider>
           {children}
           {process.env.NODE_ENV === "production" && <Analytics />}

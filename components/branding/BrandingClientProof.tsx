@@ -30,30 +30,6 @@ import {
 
 export const brandingProofSlides: TestimonialSlide[] = [
   {
-    id: "hautebaby-testimonial",
-    brandName: "Haute Baby",
-    brandColor: "#9333EA",
-    brandType: "hautebaby",
-    logoUrl: hauteBabyLogo,
-    industry: "Luxury Children's Apparel & Shopify",
-    badge: "Verified Retail Partner",
-    timeline: "Ongoing E-Commerce Growth",
-    quote:
-      "“Working with Digixito has been a positive experience for Haute Baby. Their team has supported our digital marketing efforts and helped us strengthen our online presence. They also built our Shopify website and continue to manage it, helping keep the site updated and running smoothly as our business grows.”",
-    specialNote:
-      "Having a team we can rely on for both digital marketing and website support has made Digixito a valuable partner in Haute Baby’s growth.",
-    author: "Haute Baby Team",
-    role: "Brand Leadership",
-    company: "Haute Baby",
-    deliverables: [
-      "Shopify Website Build",
-      "Store Management",
-      "Digital Marketing",
-      "Sales Optimization",
-    ],
-    isApproach: false,
-  },
-  {
     id: "hscore-testimonial",
     brandName: "hScore",
     brandColor: "#38BDF8",
@@ -98,6 +74,30 @@ export const brandingProofSlides: TestimonialSlide[] = [
       "Web Platform",
       "Admin Portal",
       "Agile Evolution",
+    ],
+    isApproach: false,
+  },
+  {
+    id: "hautebaby-testimonial",
+    brandName: "Haute Baby",
+    brandColor: "#9333EA",
+    brandType: "hautebaby",
+    logoUrl: hauteBabyLogo,
+    industry: "Luxury Children's Apparel & Shopify",
+    badge: "Verified Retail Partner",
+    timeline: "Ongoing E-Commerce Growth",
+    quote:
+      "“Working with Digixito has been a positive experience for Haute Baby. Their team has supported our digital marketing efforts and helped us strengthen our online presence. They also built our Shopify website and continue to manage it, helping keep the site updated and running smoothly as our business grows.”",
+    specialNote:
+      "Having a team we can rely on for both digital marketing and website support has made Digixito a valuable partner in Haute Baby’s growth.",
+    author: "Haute Baby Team",
+    role: "Brand Leadership",
+    company: "Haute Baby",
+    deliverables: [
+      "Shopify Website Build",
+      "Store Management",
+      "Digital Marketing",
+      "Sales Optimization",
     ],
     isApproach: false,
   },
